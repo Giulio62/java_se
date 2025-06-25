@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame di Certificazione Java - Simulazione</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Esame di Certificazione Java - Livello Base (Simulazione)</h1>
+        <p class="instructions">Istruzioni: Per ogni domanda, seleziona la singola risposta corretta.</p>
+
+        <div id="quiz-screen">
+            <p id="question-number" class="question-number"></p>
+            <p id="question-text" class="question-text"></p>
+            <div id="options-container" class="options-container">
+                </div>
+            <button id="next-button" class="next-button" disabled>Prossima Domanda</button>
+        </div>
+
+        <div id="result-screen" style="display: none;">
+            <h2 class="result-title">Risultati dell'Esame</h2>
+            <p class="score-container">Il tuo punteggio finale: <span id="final-score"></span> / <span id="total-questions"></span></p>
+            <p id="result-percentage" class="result-percentage"></p>
+            <p id="result-message" class="result-message"></p>
+            <button id="restart-button" class="restart-button">Ricomincia l'Esame</button>
+
+            <div id="review-container" class="review-container" style="display: none;">
+                <h3>Rivedi le tue risposte:</h3>
+                <ul id="review-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
