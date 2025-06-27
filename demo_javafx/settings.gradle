@@ -1,0 +1,10 @@
+// settings.gradle
+
+pluginManagement {
+    repositories {
+        gradlePluginPortal() // Questo è il repository di default per i plugin Gradle
+        mavenCentral()       // AGGIUNGI QUESTA RIGA!
+        google()             // Se hai anche dipendenze Android, ma non è il tuo caso qui
+    }
+}
+rootProject.name = 'demo_javafx' // Assicurati che questa riga sia presente e corretta

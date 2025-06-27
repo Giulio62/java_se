@@ -1,0 +1,49 @@
+// build.gradle (NUOVO file completo e corretto per JavaFX con il plugin OpenJFX)
+
+plugins {
+    id 'java'
+    id 'application'
+    // Rimuovi il plugin GluonFX per ora e usiamo il plugin standard di OpenJFX
+    // id("com.gluonhq.gluonfx-gradle-plugin") version "1.0.26"
+
+    // Aggiungi questo plugin specifico per JavaFX di OpenJFX
+    id 'org.openjfx.javafxplugin' version '0.1.0' // Usa la versione più recente, questa è stabile
+}
+
+group = 'com.example.demo'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = 'com.example.demo.MainApp'
+}
+
+// *** NUOVA SEZIONE PER IL PLUGIN OPENJFX ***
+// Questo plugin gestisce automaticamente le dipendenze e il module-path per JavaFX.
+javafx {
+    version = "21.0.2" // La versione di JavaFX che stai usando
+    modules = [ 'javafx.controls', 'javafx.fxml' ] // I moduli JavaFX che la tua app usa
+    // Se usi altri moduli (es. javafx.graphics, javafx.web, ecc.), aggiungili qui
+}
+
+// Rimuovi le dipendenze JavaFX dirette da qui, le gestirà il plugin 'javafxplugin'
+dependencies {
+    // implementation 'org.openjfx:javafx-controls:21.0.2' // Rimuovi
+    // implementation 'org.openjfx:javafx-fxml:21.0.2'     // Rimuovi
+
+    // Altre dipendenze se la tua app ne ha bisogno
+    // implementation 'com.google.guava:guava:33.0.0-jre'
+    // testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.0-M1'
+    // testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.11.0-M1'
+}
+
+// Sezione di configurazione opzionale per il plugin GluonFX, se lo userai in futuro
+// per le build native. Per ora lo teniamo disabilitato.
+/*
+gluonfx {
+    // ...
+}
+*/

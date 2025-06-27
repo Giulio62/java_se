@@ -1,6 +1,18 @@
-module demo.javafx {
-    requires javafx.controls; // Richiede il modulo JavaFX per i controlli UI (Button, Label, TextField)
-    requires javafx.fxml; // Richiede il modulo FXML (anche se non lo usiamo direttamente in questa demo, è una dipendenza comune per progetti JavaFX)
+// src/main/java/module-info.java (NUOVO e CORRETTO)
+module com.example.demo {
+    // Richiedi i moduli JavaFX che la tua applicazione usa.
+    // javafx.fxml implicitamente richiede javafx.controls e javafx.graphics
+    requires javafx.controls;
+    requires javafx.fxml;
 
-    exports com.example.demo; // Esporta il pacchetto 'com.example.demo' per renderlo accessibile
+    // Se in futuro userai altre parti di JavaFX, aggiungi qui le relative 'requires',
+    // ad esempio:
+    // requires javafx.graphics; // Già incluso implicitamente da javafx.fxml
+    // requires javafx.web;
+    // requires javafx.media;
+
+    // Questa riga è FONDAMENTALE: permette al modulo 'demo' di esporre il pacchetto
+    // 'com.example.demo' (dove si trova MainApp) al runtime di JavaFX,
+    // in modo che JavaFX possa trovare e caricare la tua applicazione.
+    exports com.example.demo;
 }
