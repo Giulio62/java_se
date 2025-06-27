@@ -1,1 +1,65 @@
-/.metadata/
+# Ignora le cartelle di build di Maven e i file JAR/WAR/ZIP generati
+*/target/
+*.zip
+*.jar
+*.war
+*.class
+
+# Ignora le cartelle di compilazione Java (es. bin/ per Eclipse, se non già coperte da */target/)
+*/bin/
+
+# File di configurazione degli IDE (molto importanti da ignorare)
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# File specifici di Eclipse (se ci sono progetti Eclipse non coperti sopra)
+.classpath
+.project
+.settings/
+.metadata
+tmp/
+
+# File generati dal sistema operativo
+.DS_Store
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ====================================================================
+# IGNORA LE CARTELLE E I FILE SPECIFICI CHE NON VUOI CARICARE SU GITHUB
+# Rimuovi il '#' all'inizio della riga per ignorare l'elemento.
+# ====================================================================
+
+# File ZIP/JAR esterni
+apache-maven-3.8.9-bin.zip
+jakarta.servlet-api-5.0.0.jar
+mysql-connector-j-9.1.0.jar
+demo.war
+
+# Cartelle di progetti o temporanee che non vuoi sul repo principale
+apache-maven-3.8.9-bin/
+anagraficaweb/
+DemoDispatcherServlet/
+DemoFilter/
+DemoSession/
+GradiRadianti/
+Java_academy/     # Se vuoi caricare Java_academy, commenta questa riga
+Servers/
+clientrest/
+convertiGradi3/
+demo/
+Day01/            # Ignora queste se non vuoi i tuoi esercizi giornalieri
+Day02/
+Day03/
+# Potrebbe esserci un module-info.java nella radice che non appartiene a un progetto
+# module-info.java 
+# anagraficaweb/WebContent/WEB-INF/classes/it/promimpresa/web/controllo/success.jsp (questo è un file specifico che era untracked, forse meglio ignorare la cartella genitore)
+# anagraficaweb/WebContent/jsp/
+# anagraficaweb/WebContent/style1.css
+# anagraficaweb/src/main/java/it/promimpresa/web/controllo/DemoDispatcherServlet.java
+# quiz.html
+# script.js
+# style.css
